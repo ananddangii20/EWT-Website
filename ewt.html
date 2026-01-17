@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TCET-EWT</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Glassy navbar effect */
+    .glass {
+      background: rgba(197, 83, 2, 0.4);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+    }
+
+    /* Marquee Animation */
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee {
+      display: flex;
+      width: 200%;
+      animation: marquee 20s linear infinite;
+    }
+   /* Shiny Effect */
+  .shiny-metal {
+    position: relative;
+    background: linear-gradient(145deg, #e0e0e0, #f8f8f8, #d0d0d0);
+    background-size: 400% 400%;
+    border: 1px solid #ccc;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .shiny-metal:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  }
+  .shiny-metal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg);
+    animation: silverShine 2s infinite;
+  }
+
+  @keyframes silverShine {
+    0% { left: -75%; }
+    50% { left: 100%; }
+    100% { left: -75%; }
+  }
+
+
+      
+  </style>
+</head>
+<body class="bg-yellow-700 text-black">
+<!-- ✅ White Navbar -->
+<nav id="navbar" class="bg-white text-black fixed w-full z-50 shadow-md transition duration-500">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <a href="#home" class="flex items-center space-x-2">
+        <img src="ewt logo.jpg" alt="TCET-EWT Logo" 
+             class="h-12 w-auto rounded-xl transition-transform duration-500 ease-in-out hover:scale-110 hover:rotate-3 shadow-lg">
+        <span class="font-bold text-2xl hidden sm:block transition-all duration-500"> </span>
+      </a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-8 font-semibold items-center text-2xl  ">
+        <a href="ewt.html" class="hover:text-amber-600 transition">Home</a>
+        <a href="events.html" class="hover:text-amber-600 transition">Events</a>
+        <a href="Aboutpg.html" class="hover:text-amber-600 transition">About Us</a>
+
+        <!-- Login Button -->
+        <a href="login.html" 
+           class="px-6 py-2 rounded-lg bg-amber-600 text-white font-semibold text-xl
+                  hover:bg-amber-700 hover:shadow-lg transition duration-300">
+          Login
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+  <!-- ✅ Mobile Navbar (White BG + Black Text) -->
+<nav id="mobile-navbar" class="md:hidden fixed w-full z-50 shadow-md transition duration-500 bg-white">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <a href="#home" class="flex items-center space-x-2">
+        <img src="ewt logo.jpg" alt="TCET-EWT Logo" 
+             class="h-12 w-auto rounded-xl transition-transform duration-500 ease-in-out hover:scale-110 hover:rotate-3 shadow-lg">
+        <span class="font-bold text-2xl hidden sm:block text-black transition-all duration-500">TCET-EWT</span>
+      </a>
+
+      <!-- Mobile Hamburger -->
+      <div class="md:hidden">
+        <button id="menu-btn" class="focus:outline-none">
+          <svg class="w-7 h-7" fill="none" stroke="black" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden md:hidden bg-white px-4 pb-4 space-y-2 text-xl text-black">
+  <a href="ewt.html" class="block hover:text-amber-600 transition">Home</a>
+  <a href="events.html" class="block hover:text-amber-600 transition">Events</a>
+  <a href="Aboutpg.html" class="block hover:text-amber-600 transition">About Us</a>
+  <a href="login.html" class="block hover:text-amber-600 transition">Login</a>
+</div>
+</nav>
+
+
+<!-- ✅ Hero Carousel -->
+<header id="home" class="relative h-screen w-full overflow-hidden pt-16 md:pt-20">
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+    <img id="hero-img" src="orent.jpeg" 
+         class="w-full h-full object-cover transition-opacity duration-700" />
+  </div>
+
+  <!-- Overlay + Content -->
+  <div class="absolute inset-0 bg-white/30 flex flex-col justify-center items-center text-center px-4">
+    
+    <!-- Shiny Animated Title -->
+    <h1 class="text-6xl sm:text-8xl lg:text-7xl font-extrabold text-gray-900 relative animate-shiny-text">
+      TCET-EWT
+    </h1>
+
+    <!-- Subtitle -->
+    <p class="mt-4 text-lg sm:text-2xl font-semibold text-gray-800 tracking-wide animate-pulse font-bold">
+      Issues • Innovation • Impact
+    </p>
+
+    <!-- Description -->
+    <p class="mt-6 max-w-3xl text-sm sm:text-lg md:text-xl text-gray-900/90 leading-relaxed font-bold">
+      Empowering students to create meaningful change through 
+      <span class="text-amber-600 font-semibold">social initiatives</span>, 
+      <span class="text-amber-600 font-semibold">innovative ideas</span>, and 
+      <span class="text-amber-600 font-semibold">impactful actions</span> for a better tomorrow.
+    </p>
+  </div>
+</header>
+
+<!-- Extra CSS animation for shiny effect -->
+<style>
+@keyframes shiny-sweep {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.animate-shiny-text {
+  background: linear-gradient(90deg, #b45309, #f59e0b, #b45309);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: shiny-sweep 4s linear infinite;
+}
+</style>
+
+<!-- ✅ Activities Section -->
+<section id="activities" 
+  class="relative py-16 px-6 bg-no-repeat bg-cover bg-center w-full min-h-[80vh]" 
+  style="background-image: url('https://img.freepik.com/premium-vector/seamless-pattern-black-geometric-shapes-white-background_150234-182176.jpg');">
+
+  <!-- Overlay to keep readability -->
+  <div class="absolute inset-0 bg-white/90"></div>
+
+  <h2 class="relative text-5xl text-center font-extrabold mb-12 
+    bg-gradient-to-r from-amber-600 via-orange-500 to-amber-400 
+    bg-clip-text text-transparent animate-shiny-text z-10">
+    OUR IMPACT IN ACTION
+  </h2>
+
+  <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto z-10">
+
+    <!-- Activity 1 -->
+    <div class="activity-card bg-[#fff5eb] rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+      <video src="tiny.mp4" controls poster="tiny.png" class="w-full h-56 object-cover"></video>
+      <div class="p-5">
+        <h3 class="text-xl font-semibold text-[#f97316] mb-2">Tiny Twirlers</h3>
+        <p class="text-gray-700">An initiative full of joy and movement, where our members teach dance and lead fun-filled activities for young children.</p>
+      </div>
+    </div>
+
+    <!-- Activity 2 -->
+    <div class="activity-card bg-[#fff5eb] rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+      <video src="trishool.mp4" controls poster="trishool.png" class="w-full h-56 object-cover"></video>
+      <div class="p-5">
+        <h3 class="text-xl font-semibold text-[#f97316] mb-2">Trishool</h3>
+        <p class="text-gray-700">A thrilling gaming competition fostering friendly rivalry and strategy across BGMI, Call of Duty, and Chess.</p>
+      </div>
+    </div>
+
+    <!-- Activity 3 -->
+    <div class="activity-card bg-[#fff5eb] rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+      <video src="bachpan.mp4" controls poster="bachpan.png" class="w-full h-56 object-cover"></video>
+      <div class="p-5">
+        <h3 class="text-xl font-semibold text-[#f97316] mb-2">Bachpan</h3>
+        <p class="text-gray-700">Our flagship event to introduce the spirit of EWT with engaging games and fun activities, inviting new members to join our cause.</p>
+      </div>
+    </div>
+
+    
+
+  </div>
+</section>
+
+<!-- CSS for glowing border on hover -->
+<style>
+  .activity-card:hover {
+    box-shadow: 0 0 20px 5px rgba(255,165,0,0.7); /* Orange glow */
+    border: 1px solid rgba(255,165,0,0.9);
+  }
+</style>
+
+
+
+<!-- Metallic Shiny Counting Section with Background Image -->
+<section 
+  id="stats" 
+  class="relative py-20 bg-cover bg-center bg-no-repeat"
+  style="background-image: url('https://www.shutterstock.com/image-photo/blurred-background-cute-little-kids-260nw-2586795777.jpg');"
+>
+  <!-- Optional Overlay for better readability -->
+  <div class="absolute inset-0 bg-black/20"></div>
+
+  <div class="relative max-w-6xl mx-auto px-6 text-center">
+    <span class="text-gray-900 text-5xl font-bold relative z-10">OUR</span>
+    -<span class="text-orange-600 text-5xl font-bold relative z-10">ACHIEVEMENTS</span>
+
+    <!-- Add margin bottom for gap -->
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-10 relative z-10">
+
+      <!-- Card Template -->
+      <div class="relative bg-gray-100/70 shadow-lg rounded-2xl p-10 flex flex-col items-center overflow-hidden shiny-metal">
+        <h3 class="text-5xl font-bold text-gray-800 counter" data-target="100">0</h3>
+        <p class="text-gray-700 mt-2 text-lg">Events</p>
+        <i class='bx bxs-calendar-event text-5xl text-orange-500 mt-4'></i>
+      </div>
+
+      <div class="relative bg-gray-100/70 shadow-lg rounded-2xl p-10 flex flex-col items-center overflow-hidden shiny-metal">
+        <h3 class="text-5xl font-bold text-gray-800 counter" data-target="170">0</h3>
+        <p class="text-gray-700 mt-2 text-lg">Volunteers</p>
+        <i class='bx bxs-group text-5xl text-orange-500 mt-4'></i>
+      </div>
+
+      <div class="relative bg-gray-100/70 shadow-lg rounded-2xl p-10 flex flex-col items-center overflow-hidden shiny-metal">
+        <h3 class="text-5xl font-bold text-gray-800 counter" data-target="50">0</h3>
+        <p class="text-gray-700 mt-2 text-lg">Projects</p>
+        <i class='bx bxs-briefcase-alt text-5xl text-orange-500 mt-4'></i>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer id="footer" class="bg-orange-100 text-gray-800">
+  <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between md:items-end">
+    
+    <!-- Left Section -->
+    <div class="text-left md:w-2/3">
+      <h2 class="font-bold text-2xl">
+        <span class="text-gray-900">TCET</span>-<span class="text-orange-600">EWT</span>
+      </h2>
+      <p class="text-xl leading-relaxed">
+        Thakur College of Engineering and Technology<br>
+        A Block, Thakur Educational Campus, Thakur Village,<br>
+        Kandivali East, Mumbai 400101, MH-IN
+      </p>
+      <a href="mailto:tcetewt@gmail.com" class="text-gray-500 underline text-sm">
+        tcetewt@gmail.com
+      </a>
+      <!-- Credit Line -->
+       <br>
+       <br>
+      <p class="text-sm text-gray-600 mt-2">
+        💻 Code made with ❤️ by EWT Technical Team
+      </p>
+    </div>
+
+    <!-- Right Section (Social Icons) -->
+    <div class="flex space-x-6 text-4xl md:mt-0 mt-4 md:justify-end md:items-end">
+      <a href="https://www.instagram.com/tcet_ewt" class="hover:text-pink-500 transition"><i class='bx bxl-instagram'></i></a>
+      <a href="mailto:tcetewt@gmail.com" class="hover:text-red-600 transition">
+        <i class='bx bxs-envelope'></i>
+      </a>
+      <!-- <a href="https://wa.me/+918692013791" class="hover:text-green-500 transition"><i class='bx bxl-whatsapp'></i></a>
+      <a href="https://www.linkedin.com/in/tcet-ewt" class="hover:text-blue-600 transition"><i class='bx bxl-linkedin'></i></a> -->
+    </div>
+
+  </div>
+
+  <!-- Divider Line -->
+  <div class="border-t border-gray-400 my-4"></div>
+
+  <!-- Bottom Section -->
+  <div class="text-sm text-gray-600 text-center">
+    Copyright © 2025 by EWT Club of TCET
+  </div>
+</footer>
+
+
+
+
+  <script>
+    // Mobile Menu Toggle
+    document.getElementById("menu-btn").addEventListener("click", () => {
+      document.getElementById("mobile-menu").classList.toggle("hidden");
+    });
+
+    // Hero Auto Slide
+    const heroImages = ["orent.jpeg", "3.jpg", "4.jpg"];
+    let index = 0;
+    setInterval(() => {
+      index = (index + 1) % heroImages.length;
+      document.getElementById("hero-img").src = heroImages[index];
+    }, 4000);
+
+   
+
+  const counters = document.querySelectorAll('.counter');
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText.replace('+','');
+      const increment = target / 200; // Adjust speed
+
+      if(count < target) {
+        counter.innerText = Math.ceil(count + increment) + '+';
+        setTimeout(updateCount, 10);
+      } else {
+        counter.innerText = target + '+';
+      }
+    };
+    updateCount();
+  });
+
+ 
+     
+  </script>
+</body>
+</html>

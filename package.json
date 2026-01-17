@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "mysql2": "^3.15.3"
+  },
+  "name": "ewt-home",
+  "version": "1.0.0",
+  "description": "",
+  "main": "admin.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

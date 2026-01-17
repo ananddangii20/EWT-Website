@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EWT Portal Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .captcha-box {
+            background: #f0f0f0;
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            text-decoration: line-through;
+            user-select: none;
+            text-align: center;
+            padding: 8px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body class="bg-amber-50 flex items-center justify-center min-h-screen">
+
+    <div class="bg-white shadow-lg rounded-xl w-full max-w-sm p-8">
+        <div class="text-center mb-6">
+            <img src="ewt logo.jpg" class="h-12 w-12 mx-auto mb-2" alt="logo"/>
+            <h1 class="text-2xl font-bold text-amber-600">EWT Portal Login</h1>
+        </div>
+
+        <form id="login-form">
+            <div class="mb-4">
+                <label for="username" class="block text-gray-700 text-sm mb-1">Username</label>
+                <input type="text" id="username" placeholder="Enter your username" required
+                       class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-amber-400 focus:outline-none">
+            </div>
+
+            <div class="mb-4">
+                <label for="password" class="block text-gray-600 text-sm mb-1">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required
+                       class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-amber-400 focus:outline-none">
+            </div>
+            
+            <div class="mb-4">
+                <label class="block text-gray-600 text-sm mb-1">Verification</label>
+                <div class="flex items-center gap-2">
+                    <div id="captcha-display" class="captcha-box flex-grow"></div>
+                    <button type="button" id="refresh-captcha" class="p-3 text-gray-600 hover:text-amber-600">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+                <input type="text" id="captcha-input" placeholder="Enter text from image" required
+                       class="w-full mt-2 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-amber-400 focus:outline-none">
+            </div>
+
+            <button type="submit" id="login-btn" class="w-full bg-amber-700 text-white py-2 rounded-lg font-semibold hover:bg-amber-800 mb-2">
+                Sign In
+            </button>
+            
+            <p id="error-message" class="text-red-500 text-sm text-center h-4"></p>
+
+        </form>
+    </div>
+
+    <script src="login.js" defer></script>
+
+</body>
+</html>
