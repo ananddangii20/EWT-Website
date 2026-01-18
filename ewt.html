@@ -59,24 +59,20 @@
   </style>
 </head>
 <body class="bg-yellow-700 text-black">
-<!-- ✅ White Navbar -->
 <nav id="navbar" class="bg-white text-black fixed w-full z-50 shadow-md transition duration-500">
   <div class="max-w-7xl mx-auto px-4">
     <div class="flex justify-between items-center h-16">
-      <!-- Logo -->
       <a href="#home" class="flex items-center space-x-2">
         <img src="ewt logo.jpg" alt="TCET-EWT Logo" 
              class="h-12 w-auto rounded-xl transition-transform duration-500 ease-in-out hover:scale-110 hover:rotate-3 shadow-lg">
         <span class="font-bold text-2xl hidden sm:block transition-all duration-500"> </span>
       </a>
 
-      <!-- Desktop Menu -->
       <div class="hidden md:flex space-x-8 font-semibold items-center text-2xl  ">
         <a href="ewt.html" class="hover:text-amber-600 transition">Home</a>
         <a href="events.html" class="hover:text-amber-600 transition">Events</a>
         <a href="Aboutpg.html" class="hover:text-amber-600 transition">About Us</a>
 
-        <!-- Login Button -->
         <a href="login.html" 
            class="px-6 py-2 rounded-lg bg-amber-600 text-white font-semibold text-xl
                   hover:bg-amber-700 hover:shadow-lg transition duration-300">
@@ -86,18 +82,15 @@
     </div>
   </div>
 </nav>
-  <!-- ✅ Mobile Navbar (White BG + Black Text) -->
-<nav id="mobile-navbar" class="md:hidden fixed w-full z-50 shadow-md transition duration-500 bg-white">
+  <nav id="mobile-navbar" class="md:hidden fixed w-full z-50 shadow-md transition duration-500 bg-white">
   <div class="max-w-7xl mx-auto px-4">
     <div class="flex justify-between items-center h-16">
-      <!-- Logo -->
       <a href="#home" class="flex items-center space-x-2">
         <img src="ewt logo.jpg" alt="TCET-EWT Logo" 
              class="h-12 w-auto rounded-xl transition-transform duration-500 ease-in-out hover:scale-110 hover:rotate-3 shadow-lg">
         <span class="font-bold text-2xl hidden sm:block text-black transition-all duration-500">TCET-EWT</span>
       </a>
 
-      <!-- Mobile Hamburger -->
       <div class="md:hidden">
         <button id="menu-btn" class="focus:outline-none">
           <svg class="w-7 h-7" fill="none" stroke="black" viewBox="0 0 24 24">
@@ -109,8 +102,7 @@
     </div>
   </div>
 
-  <!-- Mobile Menu -->
-<div id="mobile-menu" class="hidden md:hidden bg-white px-4 pb-4 space-y-2 text-xl text-black">
+  <div id="mobile-menu" class="hidden md:hidden bg-white px-4 pb-4 space-y-2 text-xl text-black">
   <a href="ewt.html" class="block hover:text-amber-600 transition">Home</a>
   <a href="events.html" class="block hover:text-amber-600 transition">Events</a>
   <a href="Aboutpg.html" class="block hover:text-amber-600 transition">About Us</a>
@@ -119,28 +111,22 @@
 </nav>
 
 
-<!-- ✅ Hero Carousel -->
 <header id="home" class="relative h-screen w-full overflow-hidden pt-16 md:pt-20">
-  <!-- Background Image -->
   <div class="absolute inset-0">
     <img id="hero-img" src="orent.jpeg" 
          class="w-full h-full object-cover transition-opacity duration-700" />
   </div>
 
-  <!-- Overlay + Content -->
   <div class="absolute inset-0 bg-white/30 flex flex-col justify-center items-center text-center px-4">
     
-    <!-- Shiny Animated Title -->
     <h1 class="text-6xl sm:text-8xl lg:text-7xl font-extrabold text-gray-900 relative animate-shiny-text">
       TCET-EWT
     </h1>
 
-    <!-- Subtitle -->
     <p class="mt-4 text-lg sm:text-2xl font-semibold text-gray-800 tracking-wide animate-pulse font-bold">
       Issues • Innovation • Impact
     </p>
 
-    <!-- Description -->
     <p class="mt-6 max-w-3xl text-sm sm:text-lg md:text-xl text-gray-900/90 leading-relaxed font-bold">
       Empowering students to create meaningful change through 
       <span class="text-amber-600 font-semibold">social initiatives</span>, 
@@ -150,7 +136,6 @@
   </div>
 </header>
 
-<!-- Extra CSS animation for shiny effect -->
 <style>
 @keyframes shiny-sweep {
   0% { background-position: -200% 0; }
@@ -165,12 +150,10 @@
 }
 </style>
 
-<!-- ✅ Activities Section -->
 <section id="activities" 
   class="relative py-16 px-6 bg-no-repeat bg-cover bg-center w-full min-h-[80vh]" 
   style="background-image: url('https://img.freepik.com/premium-vector/seamless-pattern-black-geometric-shapes-white-background_150234-182176.jpg');">
 
-  <!-- Overlay to keep readability -->
   <div class="absolute inset-0 bg-white/90"></div>
 
   <h2 class="relative text-5xl text-center font-extrabold mb-12 
@@ -179,41 +162,11 @@
     OUR IMPACT IN ACTION
   </h2>
 
-  <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto z-10">
-
-    <!-- Activity 1 -->
-    <div class="activity-card bg-[#fff5eb] rounded-xl shadow-lg overflow-hidden transition-all duration-300">
-      <video src="tiny.mp4" controls poster="tiny.png" class="w-full h-56 object-cover"></video>
-      <div class="p-5">
-        <h3 class="text-xl font-semibold text-[#f97316] mb-2">Tiny Twirlers</h3>
-        <p class="text-gray-700">An initiative full of joy and movement, where our members teach dance and lead fun-filled activities for young children.</p>
-      </div>
-    </div>
-
-    <!-- Activity 2 -->
-    <div class="activity-card bg-[#fff5eb] rounded-xl shadow-lg overflow-hidden transition-all duration-300">
-      <video src="trishool.mp4" controls poster="trishool.png" class="w-full h-56 object-cover"></video>
-      <div class="p-5">
-        <h3 class="text-xl font-semibold text-[#f97316] mb-2">Trishool</h3>
-        <p class="text-gray-700">A thrilling gaming competition fostering friendly rivalry and strategy across BGMI, Call of Duty, and Chess.</p>
-      </div>
-    </div>
-
-    <!-- Activity 3 -->
-    <div class="activity-card bg-[#fff5eb] rounded-xl shadow-lg overflow-hidden transition-all duration-300">
-      <video src="bachpan.mp4" controls poster="bachpan.png" class="w-full h-56 object-cover"></video>
-      <div class="p-5">
-        <h3 class="text-xl font-semibold text-[#f97316] mb-2">Bachpan</h3>
-        <p class="text-gray-700">Our flagship event to introduce the spirit of EWT with engaging games and fun activities, inviting new members to join our cause.</p>
-      </div>
-    </div>
-
-    
-
+  <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto z-10" id="impact-container">
+    <p class="text-center text-gray-500 col-span-3 font-bold text-xl animate-pulse">Loading impact stories...</p>
   </div>
 </section>
 
-<!-- CSS for glowing border on hover -->
 <style>
   .activity-card:hover {
     box-shadow: 0 0 20px 5px rgba(255,165,0,0.7); /* Orange glow */
@@ -223,23 +176,19 @@
 
 
 
-<!-- Metallic Shiny Counting Section with Background Image -->
 <section 
   id="stats" 
   class="relative py-20 bg-cover bg-center bg-no-repeat"
   style="background-image: url('https://www.shutterstock.com/image-photo/blurred-background-cute-little-kids-260nw-2586795777.jpg');"
 >
-  <!-- Optional Overlay for better readability -->
   <div class="absolute inset-0 bg-black/20"></div>
 
   <div class="relative max-w-6xl mx-auto px-6 text-center">
     <span class="text-gray-900 text-5xl font-bold relative z-10">OUR</span>
     -<span class="text-orange-600 text-5xl font-bold relative z-10">ACHIEVEMENTS</span>
 
-    <!-- Add margin bottom for gap -->
     <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-10 relative z-10">
 
-      <!-- Card Template -->
       <div class="relative bg-gray-100/70 shadow-lg rounded-2xl p-10 flex flex-col items-center overflow-hidden shiny-metal">
         <h3 class="text-5xl font-bold text-gray-800 counter" data-target="100">0</h3>
         <p class="text-gray-700 mt-2 text-lg">Events</p>
@@ -263,11 +212,9 @@
 </section>
 
 
-<!-- Footer -->
 <footer id="footer" class="bg-orange-100 text-gray-800">
   <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between md:items-end">
     
-    <!-- Left Section -->
     <div class="text-left md:w-2/3">
       <h2 class="font-bold text-2xl">
         <span class="text-gray-900">TCET</span>-<span class="text-orange-600">EWT</span>
@@ -280,45 +227,37 @@
       <a href="mailto:tcetewt@gmail.com" class="text-gray-500 underline text-sm">
         tcetewt@gmail.com
       </a>
-      <!-- Credit Line -->
-       <br>
+      <br>
        <br>
       <p class="text-sm text-gray-600 mt-2">
         💻 Code made with ❤️ by EWT Technical Team
       </p>
     </div>
 
-    <!-- Right Section (Social Icons) -->
     <div class="flex space-x-6 text-4xl md:mt-0 mt-4 md:justify-end md:items-end">
       <a href="https://www.instagram.com/tcet_ewt" class="hover:text-pink-500 transition"><i class='bx bxl-instagram'></i></a>
       <a href="mailto:tcetewt@gmail.com" class="hover:text-red-600 transition">
         <i class='bx bxs-envelope'></i>
       </a>
-      <!-- <a href="https://wa.me/+918692013791" class="hover:text-green-500 transition"><i class='bx bxl-whatsapp'></i></a>
-      <a href="https://www.linkedin.com/in/tcet-ewt" class="hover:text-blue-600 transition"><i class='bx bxl-linkedin'></i></a> -->
     </div>
 
   </div>
 
-  <!-- Divider Line -->
   <div class="border-t border-gray-400 my-4"></div>
 
-  <!-- Bottom Section -->
   <div class="text-sm text-gray-600 text-center">
     Copyright © 2025 by EWT Club of TCET
   </div>
 </footer>
 
 
-
-
-  <script>
-    // Mobile Menu Toggle
+<script>
+    // 1. Mobile Menu Toggle
     document.getElementById("menu-btn").addEventListener("click", () => {
       document.getElementById("mobile-menu").classList.toggle("hidden");
     });
 
-    // Hero Auto Slide
+    // 2. Hero Auto Slide
     const heroImages = ["orent.jpeg", "3.jpg", "4.jpg"];
     let index = 0;
     setInterval(() => {
@@ -326,27 +265,60 @@
       document.getElementById("hero-img").src = heroImages[index];
     }, 4000);
 
-   
+    // 3. Counter Animation
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText.replace('+','');
+        const increment = target / 200; // Adjust speed
 
-  const counters = document.querySelectorAll('.counter');
-  counters.forEach(counter => {
-    const updateCount = () => {
-      const target = +counter.getAttribute('data-target');
-      const count = +counter.innerText.replace('+','');
-      const increment = target / 200; // Adjust speed
+        if(count < target) {
+          counter.innerText = Math.ceil(count + increment) + '+';
+          setTimeout(updateCount, 10);
+        } else {
+          counter.innerText = target + '+';
+        }
+      };
+      updateCount();
+    });
 
-      if(count < target) {
-        counter.innerText = Math.ceil(count + increment) + '+';
-        setTimeout(updateCount, 10);
-      } else {
-        counter.innerText = target + '+';
-      }
-    };
-    updateCount();
-  });
+    // 4. Load Impact Stories Dynamically
+    async function loadImpactStories() {
+        const container = document.getElementById('impact-container');
+        const BASE_URL = 'http://localhost:5000/'; // Matches backend port
 
- 
-     
-  </script>
+        try {
+            const res = await fetch(BASE_URL + 'api/impact');
+            const stories = await res.json();
+            
+            if (stories.length > 0) {
+                container.innerHTML = stories.map(story => {
+                    // Correctly format the video URL
+                    // Database stores: "uploads/filename.mp4"
+                    // Frontend needs: "http://localhost:5000/uploads/filename.mp4"
+                    const videoSrc = BASE_URL + story.video_url;
+
+                    return `
+                    <div class="activity-card bg-[#fff5eb] rounded-xl shadow-lg overflow-hidden transition-all duration-300">
+                      <video src="${videoSrc}" controls class="w-full h-56 object-cover bg-black"></video>
+                      <div class="p-5">
+                        <h3 class="text-xl font-semibold text-[#f97316] mb-2">${story.title}</h3>
+                        <p class="text-gray-700">${story.description}</p>
+                      </div>
+                    </div>`;
+                }).join('');
+            } else {
+                container.innerHTML = '<p class="text-center text-gray-500 col-span-3">No stories available yet.</p>';
+            }
+        } catch (error) {
+            console.error("Could not load impact stories", error);
+            container.innerHTML = '<p class="text-center text-red-500 col-span-3">Failed to load stories. Is the server running?</p>';
+        }
+    }
+    
+    // Initialize Impact Stories
+    document.addEventListener('DOMContentLoaded', loadImpactStories);
+</script>
 </body>
 </html>
