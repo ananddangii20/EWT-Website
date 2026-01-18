@@ -13,10 +13,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle logout
     const logoutBtn = document.getElementById('logout-btn');
     if (logoutBtn) {
-        logoutBtn.addEventListener('click', () => {
-            localStorage.removeItem('token');
-            localStorage.removeItem('user');
-            window.location.href = 'login.html';
+        logoutBtn.addEventListener('click', async (e) => {
+            e.preventDefault(); // 🛑 STOP the button from redirecting immediately
+
+            try {
+                // 📡 Tell the backend to log the logout time
+                await fetch('http://localhost:5000/api/auth/logout', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+                console.log("Logout signal sent to server");
+            } catch (error) {
+                console.error("Logout failed:", error);
+            } finally {
+                // 🧹 Clear local storage and redirect AFTER the server knows
+                localStorage.removeItem('token');
+                localStorage.removeItem('user');
+                window.location.href = 'login.html';
+            }
         });
     }
 });
