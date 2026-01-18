@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | EWT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="icon" href="ewt logo.jpg" type="image/jpeg" sizes="512x512">
+    <link rel="stylesheet" href="events.css">
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://cdn.tailwindcss.com"></script>
+     <style>
+    /* Glassy navbar effect */
+    .glass {
+      background: rgba(197, 83, 2, 0.4);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+    }
+
+    /* Marquee Animation */
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .marquee {
+      display: flex;
+      width: 200%;
+      animation: marquee 20s linear infinite;
+    }
+
+    /* Shiny Effect */
+    .shiny-metal {
+      position: relative;
+      background: linear-gradient(145deg, #e0e0e0, #f8f8f8, #d0d0d0);
+      background-size: 400% 400%;
+      border: 1px solid #ccc;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .shiny-metal:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .shiny-metal::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 100%);
+      transform: skewX(-25deg);
+      animation: silverShine 2s infinite;
+    }
+
+    @keyframes silverShine {
+      0% {
+        left: -75%;
+      }
+
+      50% {
+        left: 100%;
+      }
+
+      100% {
+        left: -75%;
+      }
+    }
+  </style>
+</head>
+<body
+  class="relative min-h-screen bg-no-repeat bg-cover bg-center"
+  style="background-image: url('https://img.freepik.com/premium-vector/seamless-pattern-black-geometric-shapes-white-background_150234-182176.jpg');"
+>
+
+  <!-- Background Overlay -->
+  <div class="fixed inset-0 bg-white/95 pointer-events-none z-0"></div>
+
+    <!-- Page Content Wrapper -->
+  <div class="relative z-10">
+    
+   <!-- navbar -->
+  <nav id="navbar" class="bg-white/90 backdrop-blur-md text-black fixed w-full z-50 
+            shadow-sm border-b border-gray-200 transition-all duration-500">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex justify-between items-center h-20">
+
+        <!-- Logo (NO BOX) -->
+        <a href="#home" class="flex items-center">
+          <img src="nowater.png" alt="TCET-EWT Logo" class="h-32 w-auto transition duration-300">
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-10 font-medium text-xl">
+          <a href="ewt.html" class="relative after:absolute after:w-0 after:h-[2px] after:bg-amber-600 
+                  after:left-0 after:-bottom-1 after:transition-all after:duration-300
+                  hover:after:w-full hover:text-amber-600">
+            Home
+          </a>
+
+          <a href="events.html" class="relative after:absolute after:w-0 after:h-[2px] after:bg-amber-600 
+                  after:left-0 after:-bottom-1 after:transition-all after:duration-300
+                  hover:after:w-full hover:text-amber-600">
+            Events
+          </a>
+
+          <a href="Aboutpg.html" class="relative after:absolute after:w-0 after:h-[2px] after:bg-amber-600 
+                  after:left-0 after:-bottom-1 after:transition-all after:duration-300
+                  hover:after:w-full hover:text-amber-600">
+            About Us
+          </a>
+
+          <!-- Login Button (Desktop only animation OK) -->
+          <a href="login.html" class="px-7 py-3 rounded-xl bg-amber-600 text-white text-lg font-semibold
+                  hover:bg-amber-700 transition">
+            Login
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- ✅ Mobile Navbar (White BG + Black Text) -->
+  <nav id="mobile-navbar" class="md:hidden fixed w-full z-50 bg-white/90 backdrop-blur-md
+            shadow-sm border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex justify-between items-center h-20">
+
+        <!-- Logo (NO BOX, NO ANIMATION) -->
+        <a href="#home" class="flex items-center">
+          <img src="nowater.png" alt="TCET-EWT Logo" class="h-28 w-auto">
+        </a>
+
+        <!-- Hamburger (NO animation) -->
+        <button id="menu-btn" class="focus:outline-none">
+          <svg class="w-8 h-8" fill="none" stroke="black" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden bg-white px-6 pb-6 space-y-4 text-xl text-black
+              border-t border-gray-200">
+
+      <a href="ewt.html" class="block">Home</a>
+      <a href="events.html" class="block">Events</a>
+      <a href="Aboutpg.html" class="block">About Us</a>
+
+      <!-- Login (NO animation, NO shadow) -->
+      <a href="login.html" class="block text-center mt-4 px-6 py-3 rounded-lg
+              bg-amber-600 text-white font-semibold">
+        Login
+      </a>
+    </div>
+  </nav>
+
+    <div class="main-container">
+        <div class="filter-section">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">
+                    All (<span id="all-count">0</span>)
+                </button>
+                <button class="filter-btn" data-filter="done">
+                    Done (<span id="done-count">0</span>)
+                </button>
+                <button class="filter-btn" data-filter="upcoming">
+                    Upcoming (<span id="upcoming-count">0</span>)
+                </button>
+            </div>
+        </div>
+
+        <div class="events-container" id="events-container">
+            <p id="loading-message">Loading events...</p>
+        </div>
+
+        <div class="no-events" id="no-events" style="display: none;">
+            <p>No events found for the selected filter.</p>
+        </div>
+    </div>
+  </div>
+
+    <script src="events.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+/* Reset and base styles */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #FFF3DD;
+    color: #374151;
+ 
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* --- NEW: Style for the Login link in mobile menu specifically --- */
+/* This targets the 'Login' link within the mobile menu, ensuring it doesn't get the button style */
+.nav-links-mobile .login-btn {
+    background-color: transparent; /* Remove orange background */
+    color: black; /* Set text color to black */
+    padding: 0.5rem 0; /* Adjust padding to match other mobile links */
+    border-radius: 0; /* Remove border-radius */
+    box-shadow: none; /* Remove box-shadow */
+    font-weight: 500; /* Match other mobile links' font-weight */
+    text-align: left; /* Align text left like other mobile links */
+    font-size: 1.25rem; /* Ensure consistent font size */
+}
+
+.nav-links-mobile .login-btn:hover {
+    background-color: transparent; /* Keep background transparent on hover */
+    color: #c2410c; /* Apply hover color */
+    box-shadow: none; /* Remove box-shadow on hover */
+}
+
+
+/* --- STYLES BELOW THIS LINE REMAIN UNCHANGED --- */
+
+/* Main Container and Filters */
+.main-container { max-width: 64rem; margin: 0 auto; padding: 2.5rem 1.5rem; }
+.filter-section { margin-bottom: 2rem; }
+.filter-buttons { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.filter-btn { padding: 0.5rem 1rem; border-radius: 0.375rem; font-size: 0.875rem; font-weight: 500; cursor: pointer; transition: all 0.2s; border: 1px solid #fed7aa; background-color: transparent; color: #ea580c; }
+.filter-btn:hover { background-color: #fff7ed; }
+.filter-btn.active { background-color: #f97316; color: white; border-color: #f97316; }
+
+/* ================= EVENTS CONTAINER ================= */
+.events-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+/* ================= EVENT CARD ================= */
+.event-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.75); /* glass look */
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(251, 146, 60, 0.35); /* soft orange */
+  border-radius: 1rem;
+  padding: 1.75rem;
+
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+  transition: 
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* Hover effect */
+.event-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(249, 115, 22, 0.8);
+  box-shadow: 
+    0 18px 40px rgba(249, 115, 22, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* Accent glow line */
+.event-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.35);
+  transition: box-shadow 0.3s ease;
+}
+
+.event-card:hover::before {
+  box-shadow: 0 0 18px 4px rgba(249, 115, 22, 0.35);
+}
+
+/* ================= HEADER ================= */
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.event-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1f2933;
+  line-height: 1.4;
+}
+
+/* ================= BADGES ================= */
+.badge {
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.badge.completed {
+  background: rgba(243, 244, 246, 0.9);
+  color: #4b5563;
+  border: 1px solid rgba(209, 213, 219, 0.8);
+}
+
+.badge.upcoming {
+  background: linear-gradient(135deg, #ffedd5, #fed7aa);
+  color: #9a3412;
+  border: 1px solid #fdba74;
+}
+
+/* ================= DESCRIPTION ================= */
+.event-description {
+  color: #4b5563;
+  margin-bottom: 1.4rem;
+  line-height: 1.6;
+}
+
+/* ================= META ================= */
+.event-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+/* Icons */
+.meta-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  opacity: 0.85;
+}
+
+/* ================= EMPTY STATES ================= */
+.no-events {
+  text-align: center;
+  padding: 3.5rem 0;
+}
+
+.no-events p {
+  color: #6b7280;
+  font-size: 1.125rem;
+}
+
+#loading-message {
+  text-align: center;
+  color: #6b7280;
+  padding: 2rem;
+  font-weight: 500;
+}

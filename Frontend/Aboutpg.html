@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | EWT</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="icon" href="ewt logo.jpg" type="image/jpeg" sizes="512x512">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --primary-color: #f59e0b;
+      --secondary-color: #f97316;
+    }
+
+    .card-hover-effect:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 15px 25px rgba(255, 159, 10, 0.4);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .shiny-metal::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 60%);
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    .shiny-metal:hover::before {
+      opacity: 1;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .animate-marquee {
+      display: flex;
+      animation: marquee 25s linear infinite;
+    }
+
+    /* Sticker Peel Effect */
+    .sticker-peel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 64px;
+      height: 64px;
+      border-top-right-radius: 16px;
+      overflow: hidden;
+      transform: rotate(12deg) translate(12%, -12%);
+    }
+
+    .sticker-peel div {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top right, #ffffff, #e5e5e5);
+    }
+
+    /* Glassy navbar effect */
+    .glass {
+      background: rgba(197, 83, 2, 0.4);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+    }
+
+    /* Marquee Animation */
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .marquee {
+      display: flex;
+      width: 200%;
+      animation: marquee 20s linear infinite;
+    }
+
+    /* Shiny Effect */
+    .shiny-metal {
+      position: relative;
+      background: linear-gradient(145deg, #e0e0e0, #f8f8f8, #d0d0d0);
+      background-size: 400% 400%;
+      border: 1px solid #ccc;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .shiny-metal:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .shiny-metal::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 100%);
+      transform: skewX(-25deg);
+      animation: silverShine 2s infinite;
+    }
+
+    @keyframes silverShine {
+      0% {
+        left: -75%;
+      }
+
+      50% {
+        left: 100%;
+      }
+
+      100% {
+        left: -75%;
+      }
+    }
+  </style>
+</head>
+
+<body class="relative min-h-screen bg-no-repeat bg-cover bg-center"
+  style="background-image: url('https://img.freepik.com/premium-vector/seamless-pattern-black-geometric-shapes-white-background_150234-182176.jpg');"">
+
+  <!-- Background Overlay -->
+  <div class=" fixed inset-0 bg-white/95 pointer-events-none z-0">
+  </div>
+
+  <!-- Page Content Wrapper -->
+  <div class="relative z-10">
+
+    <!-- navbar -->
+    <nav id="navbar" class="bg-white/90 backdrop-blur-md text-black fixed w-full z-50 
+            shadow-sm border-b border-gray-200 transition-all duration-500">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-center h-20">
+
+          <!-- Logo (NO BOX) -->
+          <a href="#home" class="flex items-center">
+            <img src="nowater.png" alt="TCET-EWT Logo" class="h-32 w-auto transition duration-300">
+          </a>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center space-x-10 font-medium text-xl">
+            <a href="ewt.html" class="relative after:absolute after:w-0 after:h-[2px] after:bg-amber-600 
+                  after:left-0 after:-bottom-1 after:transition-all after:duration-300
+                  hover:after:w-full hover:text-amber-600">
+              Home
+            </a>
+
+            <a href="events.html" class="relative after:absolute after:w-0 after:h-[2px] after:bg-amber-600 
+                  after:left-0 after:-bottom-1 after:transition-all after:duration-300
+                  hover:after:w-full hover:text-amber-600">
+              Events
+            </a>
+
+            <a href="Aboutpg.html" class="relative after:absolute after:w-0 after:h-[2px] after:bg-amber-600 
+                  after:left-0 after:-bottom-1 after:transition-all after:duration-300
+                  hover:after:w-full hover:text-amber-600">
+              About Us
+            </a>
+
+            <!-- Login Button (Desktop only animation OK) -->
+            <a href="login.html" class="px-7 py-3 rounded-xl bg-amber-600 text-white text-lg font-semibold
+                  hover:bg-amber-700 transition">
+              Login
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+
+    <!-- ✅ Mobile Navbar (White BG + Black Text) -->
+    <nav id="mobile-navbar" class="md:hidden fixed w-full z-50 bg-white/90 backdrop-blur-md
+            shadow-sm border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-center h-20">
+
+          <!-- Logo (NO BOX, NO ANIMATION) -->
+          <a href="#home" class="flex items-center">
+            <img src="nowater.png" alt="TCET-EWT Logo" class="h-28 w-auto">
+          </a>
+
+          <!-- Hamburger (NO animation) -->
+          <button id="menu-btn" class="focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="black" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden bg-white px-6 pb-6 space-y-4 text-xl text-black
+              border-t border-gray-200">
+
+        <a href="ewt.html" class="block">Home</a>
+        <a href="events.html" class="block">Events</a>
+        <a href="Aboutpg.html" class="block">About Us</a>
+
+        <!-- Login (NO animation, NO shadow) -->
+        <a href="login.html" class="block text-center mt-4 px-6 py-3 rounded-lg
+              bg-amber-600 text-white font-semibold">
+          Login
+        </a>
+      </div>
+    </nav>
+
+    <main class="pt-20">
+      <!-- EWT Section -->
+      <section id="about" class="bg-white py-20 px-6 mb-16 border-b border-gray-200">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12">
+
+          <!-- Left: Big Logo -->
+          <div class="relative md:w-1/2 flex justify-center md:justify-start">
+            <div class="relative w-76 h-76 md:w-100 md:h-100
+               transition-transform duration-500
+               hover:scale-105 hover:rotate-3
+              overflow-hidden bg-white">
+              <img src="nowater.png" alt="EWT Logo" class="w-full h-full object-contain rounded-xl">
+            </div>
+          </div>
+
+          <!-- Right: Text -->
+          <div class="md:w-1/2 text-center md:text-left space-y-6">
+            <!-- Heading -->
+      <div class="flex justify-center items-center gap-2 mb-16 text-center">
+        <span class="text-gray-800 text-5xl font-bold">WHAT IS </span>
+        <span class="text-orange-600 text-5xl font-bold"> EWT ?</span>
+      </div>
+
+            <p class="text-gray-700 text-lg md:text-xl leading-relaxed">
+              EWT (Extension Work Team) is a student-led initiative at Thakur College of Engineering and Technology
+              (TCET), operating under the Scheme of Lifelong Learning and Extension guided by the University Grants
+              Commission (UGC). It connects academic learning with social responsibility by engaging students in
+              meaningful community outreach.
+            </p>
+
+            <p class="text-gray-700 text-lg md:text-xl leading-relaxed">
+              EWT works with underprivileged sections of society through educational and social initiatives aimed at
+              improving quality of life. By promoting skill development, awareness, and participation, EWT encourages
+              people-centric growth. Through extension education and field outreach activities, the team empowers
+              individuals and communities to identify challenges, adopt innovative solutions, and create sustainable
+              social impact through collective effort and responsible leadership.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+
+      <style>
+        /* Shiny shimmer animation */
+        @keyframes shiny {
+          0% {
+            transform: translateX(-100%) skewX(-12deg);
+          }
+
+          100% {
+            transform: translateX(200%) skewX(-12deg);
+          }
+        }
+
+        .animate-shiny {
+          animation: shiny 2s infinite;
+        }
+      </style>
+      <!-- Core Team Section -->
+      <section>
+        <!-- Heading -->
+      <div class="flex justify-center items-center gap-2 mb-16 text-center">
+        <span class="text-gray-800 text-5xl font-bold">CORE</span>
+        <span class="text-orange-600 text-5xl font-bold">TEAM</span>
+      </div>
+        <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 px-6">
+          <div
+            class="relative bg-white rounded-2xl shadow-lg p-6 text-center overflow-hidden shiny-metal card-hover-effect">
+            <img src="core img/ram.jpg" alt="Ramkumar Chaurasiya"
+              class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+            <h3 class="font-bold text-xl">Ramkumar Chaurasiya</h3>
+            <p class="text-gray-500">President</p>
+          </div>
+
+          <div
+            class="relative bg-white rounded-2xl shadow-lg p-6 text-center overflow-hidden shiny-metal card-hover-effect">
+            <img src="core img/dhawani.jpg" alt="Dhwani Tandon"
+              class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+            <h3 class="font-bold text-xl">Dhwani Tandon</h3>
+            <p class="text-gray-500">Vice President</p>
+          </div>
+
+          <div
+            class="relative bg-white rounded-2xl shadow-lg p-6 text-center overflow-hidden shiny-metal card-hover-effect">
+            <img src="core img/anuj.jpg" alt="Anuj Upadhyay" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+            <h3 class="font-bold text-xl">Anuj Upadhyay</h3>
+            <p class="text-gray-500">Event Manager</p>
+          </div>
+
+          <div
+            class="relative bg-white rounded-2xl shadow-lg p-6 text-center overflow-hidden shiny-metal card-hover-effect">
+            <img src="core img/priya.jpg" alt="Priya Tiwari" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+            <h3 class="font-bold text-xl">Priya Tiwari</h3>
+            <p class="text-gray-500">Magazine Head</p>
+          </div>
+
+          <div
+            class="relative bg-white rounded-2xl shadow-lg p-6 text-center overflow-hidden shiny-metal card-hover-effect">
+            <img src="core img/kasturi.jpg" alt="Kasturi Vishwasrao"
+              class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+            <h3 class="font-bold text-xl">Kasturi Vishwasrao</h3>
+            <p class="text-gray-500">Secretary</p>
+          </div>
+
+          <div
+            class="relative bg-white rounded-2xl shadow-lg p-6 text-center overflow-hidden shiny-metal card-hover-effect">
+            <img src="core img/reejesraj.JPG" alt="Reejeeshraj Kumar"
+              class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+            <h3 class="font-bold text-xl">Reejeeshraj Kumar</h3>
+            <p class="text-gray-500">Sponsorship Head</p>
+          </div>
+
+          <div
+            class="relative bg-white rounded-2xl shadow-lg p-6 text-center overflow-hidden shiny-metal card-hover-effect">
+            <img src="core img/anand.JPG" alt="Anand Dangi" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+            <h3 class="font-bold text-xl">Anand Dangi</h3>
+            <p class="text-gray-500">Technical Head</p>
+          </div>
+
+          <div
+            class="relative bg-white rounded-2xl shadow-lg p-6 text-center overflow-hidden shiny-metal card-hover-effect">
+            <img src="core img/ananya pillai.JPG" alt="Ananya Pillai"
+              class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+            <h3 class="font-bold text-xl">Ananya Pillai</h3>
+            <p class="text-gray-500">Dy. Technical Head</p>
+          </div>
+          <div
+            class="relative bg-white rounded-2xl shadow-lg p-6 text-center overflow-hidden shiny-metal card-hover-effect">
+            <img src="core img/gyan.jpg" alt="Gyaneshwar Jha" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+            <h3 class="font-bold text-xl">Gyaneshwar Jha</h3>
+            <p class="text-gray-500">PR Head</p>
+          </div>
+
+          <div
+            class="relative bg-white rounded-2xl shadow-lg p-6 text-center overflow-hidden shiny-metal card-hover-effect">
+            <img src="core img/kalp.jpg" alt="Kalp Doshi" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+            <h3 class="font-bold text-xl">Kalp Doshi</h3>
+            <p class="text-gray-500">Dy. Secretary </p>
+          </div>
+
+          <div
+            class="relative bg-white rounded-2xl shadow-lg p-6 text-center overflow-hidden shiny-metal card-hover-effect">
+            <img src="core img/tiya.JPG" alt="Tiya Sattabhayya"
+              class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+            <h3 class="font-bold text-xl">Tiya Sattabhayya</h3>
+            <p class="text-gray-500">Dy. Event Manager</p>
+          </div>
+
+          <div
+            class="relative bg-white rounded-2xl shadow-lg p-6 text-center overflow-hidden shiny-metal card-hover-effect">
+            <img src="core img/tanisha.jpg" alt="Tanisha Desai"
+              class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+            <h3 class="font-bold text-xl">Tanisha Desai</h3>
+            <p class="text-gray-500">Dy. Magazine Head </p>
+          </div>
+
+          <div
+            class="relative bg-white rounded-2xl shadow-lg p-6 text-center overflow-hidden shiny-metal card-hover-effect">
+            <img src="core img/bhavya.jpg" alt="Bhavya Sharma" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+            <h3 class="font-bold text-xl">Bhavya Sharma</h3>
+            <p class="text-gray-500">Digital Head</p>
+          </div>
+
+          <div
+            class="relative bg-white rounded-2xl shadow-lg p-6 text-center overflow-hidden shiny-metal card-hover-effect">
+            <img src="core img/pradanesh.jpg" alt="Pradnyesh Kawate"
+              class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+            <h3 class="font-bold text-xl">Pradnyesh Kawate</h3>
+            <p class="text-gray-500">Dy. Digital Head </p>
+          </div>
+
+          <div
+            class="relative bg-white rounded-2xl shadow-lg p-6 text-center overflow-hidden shiny-metal card-hover-effect">
+            <img src="core img/aum.JPG" alt="Aum Patole" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+            <h3 class="font-bold text-xl">Aum Patole</h3>
+            <p class="text-gray-500">Dy. PR head</p>
+          </div>
+
+          <div
+            class="relative bg-white rounded-2xl shadow-lg p-6 text-center overflow-hidden shiny-metal card-hover-effect">
+            <img src="core img/shruti.JPG" alt="Shruti Sawant" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+            <h3 class="font-bold text-xl">Shruti Sawant</h3>
+            <p class="text-gray-500">Cultural Head </p>
+          </div>
+
+          <div
+            class="relative bg-white rounded-2xl shadow-lg p-6 text-center overflow-hidden shiny-metal card-hover-effect">
+            <img src="core img/mahek.JPG" alt="Mahek Chaplot" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+            <h3 class="font-bold text-xl">Mahek Chaplot</h3>
+            <p class="text-gray-500">Dy. Cultural Head </p>
+          </div>
+          <div
+            class="relative bg-white rounded-2xl shadow-lg p-6 text-center overflow-hidden shiny-metal card-hover-effect">
+            <img src="core img/sourav.jpg" alt="Saurabh Pandey"
+              class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+            <h3 class="font-bold text-xl">Saurabh Pandey</h3>
+            <p class="text-gray-500">Saurabh Pandey </p>
+          </div>
+          <div
+            class="relative bg-white rounded-2xl shadow-lg p-6 text-center overflow-hidden shiny-metal card-hover-effect">
+            <img src="core img/ananya shrike.jpg" alt="Ananya Shirke"
+              class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+            <h3 class="font-bold text-xl">Ananya Shirke</h3>
+            <p class="text-gray-500">Editorial Head </p>
+          </div>
+          <div
+            class="relative bg-white rounded-2xl shadow-lg p-6 text-center overflow-hidden shiny-metal card-hover-effect">
+            <img src="core img/deep.jpg" alt="Deep Singh" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+            <h3 class="font-bold text-xl">Deep Singh</h3>
+            <p class="text-gray-500">Dy. Editorial Head </p>
+          </div>
+
+        </div>
+      </section>
+
+
+      <section class="py-16">
+ <!-- Heading -->
+      <div class="flex justify-center items-center gap-2 mb-16 text-center">
+        <span class="text-gray-800 text-5xl font-bold">OUR</span>
+        <span class="text-orange-600 text-5xl font-bold">FACULTY</span>
+      </div>
+        <div class="max-w-6xl mx-auto flex flex-wrap justify-center gap-8 px-6">
+          <div
+            class="relative bg-white rounded-2xl shadow-lg p-6 text-center overflow-hidden shiny-metal card-hover-effect">
+            <img src="mam.jpg" alt="Dr. Nidhi Tiwari" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+            <h3 class="font-bold text-xl">Dr. Nidhi Tiwari</h3>
+            <p class="text-gray-500">Programme Organizer</p>
+          </div>
+          <div
+            class="relative bg-white rounded-2xl shadow-lg p-6 text-center overflow-hidden shiny-metal card-hover-effect">
+            <img src="sir.jpg" alt="Mr. Mahesh Biradar" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+            <h3 class="font-bold text-xl">Mr. Mahesh Biradar</h3>
+            <p class="text-gray-500">Programme Organizer</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-orange-100 text-gray-800">
+      <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between md:items-end">
+
+        <!-- Left Section -->
+        <div class="text-left md:w-2/3">
+          <h2 class="font-bold text-2xl">
+            <span class="text-gray-900">TCET</span>-<span class="text-orange-600">EWT</span>
+          </h2>
+          <p class="text-xl leading-relaxed">
+            Thakur College of Engineering and Technology<br>
+            A Block, Thakur Educational Campus, Thakur Village,<br>
+            Kandivali East, Mumbai 400101, MH-IN
+          </p>
+          <a href="mailto:tcetewt@gmail.com" class="text-gray-500 underline text-sm">
+            tcetewt@gmail.com
+          </a>
+          <!-- Credit Line -->
+          <br>
+          <br>
+          <p class="text-sm text-gray-600 mt-2">
+            Made made with ❤️ by EWT Web Team
+          </p>
+        </div>
+
+        <!-- Right Section (Social Icons) -->
+        <div class="flex space-x-6 text-4xl md:mt-0 mt-4 md:justify-end md:items-end">
+          <a href="https://www.instagram.com/tcet_ewt" class="hover:text-pink-500 transition"><i
+              class='bx bxl-instagram'></i></a>
+          <a href="mailto:tcetewt@gmail.com" class="hover:text-red-600 transition">
+            <i class='bx bxs-envelope'></i>
+          </a>
+          <!-- <a href="https://wa.me/+918692013791" class="hover:text-green-500 transition"><i
+              class='bx bxl-whatsapp'></i></a>
+          <a href="https://www.linkedin.com/in/tcet-ewt" class="hover:text-blue-600 transition"><i
+              class='bx bxl-linkedin'></i></a> -->
+        </div>
+
+      </div>
+
+      <!-- Divider Line -->
+      <div class="border-t border-gray-400 my-4"></div>
+
+      <!-- Bottom Section -->
+      <div class="text-sm text-gray-600 text-center">
+        Copyright © 2025 by EWT Club of TCET
+      </div>
+    </footer>
+    </footer>
+  </div>
+
+
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+
+</html>
+
+</body>
+
+</html>

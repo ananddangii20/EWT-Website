@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faculty Dashboard</title>
+    <link rel="icon" href="ewt logo.jpg" type="image/jpeg" sizes="512x512">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-amber-50 min-h-screen">
+
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-orange-200 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
+              flex justify-between items-center
+              h-20">
+
+    <!-- Left: Logo + Title -->
+    <div class="flex items-center gap-4">
+      <!-- Logo -->
+      <a href="ewt.html" class="flex items-center">
+        <img
+          src="nowater.png"
+          alt="TCET-EWT Logo"
+          class="h-28 w-auto transition-transform duration-300 hover:scale-105"
+        >
+      </a>
+
+      <!-- Title -->
+      <span class="font-bold text-2xl text-gray-900 tracking-wide">
+        EWT Faculty Portal
+      </span>
+    </div>
+
+    <!-- Right Actions -->
+    <div class="flex items-center gap-4 text-sm">
+
+      <span id="welcome-message" class="text-gray-700 font-medium"></span>
+
+      <button
+        id="change-password-btn"
+        class="px-4 py-2.5 rounded-lg
+               bg-white border border-gray-300
+               text-gray-800 font-medium
+               hover:bg-gray-100 hover:border-gray-400
+               transition shadow-sm"
+      >
+        Change Password
+      </button>
+
+      <button
+        id="logout-btn"
+        class="px-4 py-2.5 rounded-lg
+               bg-red-500 text-white font-medium
+               hover:bg-red-600
+               transition shadow-sm"
+      >
+        Logout
+      </button>
+
+    </div>
+  </div>
+</nav>
+
+
+    <main class="p-4 sm:p-6 lg:p-8">
+        <div class="flex justify-center items-center gap-2 mb-4 text-center">
+        <span class="text-gray-800 text-5xl font-bold">ATTENDANCE</span>
+        <span class="text-orange-600 text-5xl font-bold">OVERVIEW</span>
+      </div>
+        <div class="mb-8">
+            <div class="flex justify-center items-center gap-2 mb-16 text-center">
+        <span class="text-gray-600 text-2xl font-bold">Select Group to View Attendance</span>
+      </div>
+          <div class="flex justify-center mt-8">
+  <div
+    id="groups-container"
+    class="flex flex-wrap justify-center gap-4
+           bg-white/80 backdrop-blur-xl
+           border border-orange-200
+           rounded-2xl
+           px-8 py-6
+           shadow-lg
+           max-w-4xl w-full
+           transition-all duration-500"
+  >
+    <p class="text-gray-500 font-medium animate-pulse">
+      Loading teams...
+    </p>
+  </div>
+</div>
+
+<!-- Report Container -->
+<div
+  id="report-container"
+  class="mt-10 max-w-6xl mx-auto"
+>
+</div>
+
+    </main>
+    <script src="faculty.js"></script>
+    <script src="auth.js"></script>
+    
+    <div id="password-modal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 h-full w-full flex items-center justify-center">
+        <div class="bg-white p-8 rounded-lg shadow-xl w-full max-w-md">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">Change Your Password</h2>
+            <form id="change-password-form">
+                <div class="mb-4">
+                    <label for="old-password" class="block text-sm font-medium text-gray-700">Current Password</label>
+                    <input type="password" id="old-password" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500">
+                </div>
+                <div class="mb-4">
+                    <label for="new-password" class="block text-sm font-medium text-gray-700">New Password</label>
+                    <input type="password" id="new-password" required minlength="8" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500">
+                </div>
+                <div class="mb-6">
+                    <label for="confirm-password" class="block text-sm font-medium text-gray-700">Confirm New Password</label>
+                    <input type="password" id="confirm-password" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500">
+                </div>
+                <div class="flex justify-end gap-4">
+                    <button type="button" id="cancel-btn" class="bg-gray-300 text-gray-800 px-4 py-2 rounded-md hover:bg-gray-400">Cancel</button>
+                    <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700">Save Changes</button>
+                </div>
+                <p id="password-form-message" class="text-sm text-center mt-4 h-4"></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
